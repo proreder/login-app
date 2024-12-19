@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla con Botón para Borrar Filas</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .delete-btn {
+        color: #fff;
+        background-color: #dc3545;
+    }
+</style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Tabla con Botones para Borrar Filas</h2>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Juan Pérez</td>
+                <td>juanperez@example.com</td>
+                <td>
+                    <button class="btn btn-danger delete-btn" onclick="deleteRow(this)">Borrar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>María López</td>
+                <td>marialopez@example.com</td>
+                <td>
+                    <button class="btn btn-danger delete-btn" onclick="deleteRow(this)">Borrar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pedro Rodríguez</td>
+                <td>pedrorodriguez@eixample.com</td>
+                <td>
+                    <button class="btn btn-danger delete-btn" onclick="deleteRow(this)">Borrar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Juan Francisco Vico</td>
+                <td>joanfvico@eixample.com</td>
+                <td>
+                    <button class="btn btn-danger delete-btn" onclick="deleteRow(this)">Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function deleteRow(button) {
+        // Obtener la fila padre del botón y eliminarla
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+</body>
+</html>
